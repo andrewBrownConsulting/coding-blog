@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import HomePage from './HomePage';
+import AboutMe from './AboutMe';
+import Contact from './Contact';
+import BlogPage from './BlogPage';
+import { Link, Route, Routes } from 'react-router'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav className='container'>
+        <ul className='row text-center p-4'>
+          <li className='col'><Link className='link' to='/'><img className='img-fluid' src='/logoWhite.svg' /></Link></li>
+          <li className='col'><Link className='link' to='/'>Home</Link></li>
+          <li className='col'><Link className='link' to='/about'>About Me</Link></li>
+          <li className='col'><Link className='link' to='/contact'>Contact</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutMe />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/blog' element={<BlogPage />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
