@@ -1,11 +1,13 @@
-import BlogCard from './BlogCard';
-import Abstract from './Abstract';
-import data from './assets/blog-db.json'
-
 export default function Contact() {
+    document.title = "Contact"
     return (
-        <>
-            Contact
-        </>
+        <div className="container text-center">
+            <p>Email: <a href="mailto:andrew.brown75@yahoo.com">andrew.brown75@yahoo.com</a></p>
+            <p>Message me on <a href='https://www.linkedin.com/in/andrew-brown-b50592183/'>Linkedin</a></p>
+            <p>Look at my <a href='https://www.github.com/andrewBrownConsulting/'>Github</a></p>
+            <p>Email: andrew.brown75@yahoo.com</p>
+
+
+        </div>
     )
 }

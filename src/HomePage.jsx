@@ -3,6 +3,7 @@ import Abstract from './Abstract';
 import data from './assets/blog-db.json'
 
 export default function HomePage() {
+    document.title = 'Andrew Brown Blog'
     return (
         <div className='container mb-0'>
             <main className='container mb-3'>
