@@ -4,7 +4,7 @@ export default function BlogCard({ entry }) {
         <div className="col" key={entry.id} >
             <article className='card p-2'>
                 <Link className='link-dark' to={'/blog?id=' + entry.id}>
-                    < img className='card-img' src={entry.image} alt='Post Image' />
+                    < img className='card-img' src={entry.image} alt='Post' />
                     <div className='card-body'>
                         <p className='card-title'>April 9 2025</p>
                         <h3>{entry.title}</h3>

@@ -12,7 +12,7 @@ function App() {
     <>
       <nav className='container'>
         <ul className='row text-center p-4'>
-          <li className='col'><Link className='link' to='/'><img className='img-fluid' src='/logoWhite.svg' /></Link></li>
+          <li className='col'><Link className='link' to='/'><img className='img-fluid' src='/logoWhite.svg' alt='Site Logo' /></Link></li>
           <li className='col'><Link className='link' to='/'>Home</Link></li>
           <li className='col'><Link className='link' to='/about'>About Me</Link></li>
           <li className='col'><Link className='link' to='/contact'>Contact</Link></li>
