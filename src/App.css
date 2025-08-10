@@ -1,0 +1,65 @@
+img {
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+nav {
+  width: 100%;
+  left: 0px;
+  background: linear-gradient(135deg, rgb(0, 28, 47) 0%, rgb(0, 46, 78) 68%, rgb(0, 45, 76) 100%);
+  color: white;
+}
+
+nav img {
+  max-height: 2em;
+}
+
+.link {
+  color: white;
+  display: inline;
+  text-decoration: none;
+}
+
+.link-dark {
+  color: black;
+  display: inline;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.flex-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li a:hover {
+  transition: 0.5s;
+  opacity: 0.6;
+  cursor: pointer;
+  color: #abb8c3;
+}
+
+.card {
+  box-shadow: 0 0 0.5em 0.01em;
+  text-decoration: none;
+}
+
+.card:hover {
+  background-color: gainsboro;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+
+footer {
+  background-color: black;
+}
+
+footer img {
+  max-height: 50px;
+  object-fit: contain;
+}
