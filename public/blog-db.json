@@ -1,0 +1,28 @@
+{
+    "blogEntries": [
+        {
+            "id": "starting-a-blog",
+            "title": "Yes... I'm starting a Daily Blog in 2025",
+            "date": "10th August 2025",
+            "image": "/socrates.png",
+            "imageCaption": "Statue of Socrates in thought",
+            "article": [
+                "Intro",
+                "'The unexamined life is not worth living' - Socrates. Here, I'll try to examine just about everything I know about what I do best, Software Engineering. I'm currently a middling software engineer trying to become the best. I'm a fast learner though, so that's a good start.",
+                "'... but when you examine your life... oh that's not fun' - Norm MacDonald. Routinely calling into question your most basic assumptions can be painful. I believe that,  to get good at anything, you should need to go though all the necessary torture. In this case, I'll be learning everything there is to know about software.",
+                "Who the Blog Is For",
+                "In all honesty, the blog is mostly for my own benefit. I don't much read blogs. I don't expect to get much or any interest in this blog. This blog exists simply as a creative outlet.",
+                "However, if you (not me) are reading this, then you are surely interested in software. So... maybe heed some second hand knowledge. It's not the real thing but a whiff of it. Useful for getting a taste.",
+                "The Topics I'll Be Covering",
+                "This blog aims to examine what I know, what I'm learning, deep into my thoughts. As what I'm learning is usually technology based, that's what the blog will usually be.",
+                "I have a few thoughts as to the initial direction of the blog. I'm trying for a Front-End Developer job so my current learning is aimed at front-end development. The modern state of UI is a good option. By the same token, to understand a problem is the first step to solve it so I'll examine the job market and how to best get a job in 2025. I have some expertise in code optimisation so I'll write a piece on when we should and shouldn't optimise code. Lastly, I think improving performance is an important thing to think about. I'll write on exercise, sleep and diets a little bit. ",
+                "My Target Blog style",
+                "From blogs I've read (not many) I really like one written by Tim Ferriss. He is a man who want's to make the most of his life and inspire others to do the same. His style is both deeply personal and professionally polished. It reads like a celebrity newspaper column where it's from a particular perspective but not 'talky' or poorly edited.",
+                "What Success Looks Like",
+                "Success in this blog will be if I can make it to 100 days. 100 days,100 articles, 50,000 edited. The reason for 'daily' as opposed to bi-weekly (my first thought) is that I need a lot of examination in my life.",
+                "Conclusion",
+                "What does Socrates mean when he says we need to examine our lives? Well... I think he means that we should maximise our lives. Not just live for the sake of living but really put effort into our days. Make the most of what we have. I think this blog is the first step towards that goal!"
+            ]
+        }
+    ]
+}

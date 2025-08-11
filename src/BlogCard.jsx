@@ -6,7 +6,7 @@ export default function BlogCard({ entry }) {
                 <Link className='link-dark' to={'/blog?id=' + entry.id}>
                     < img className='card-img' src={entry.image} alt='Post' />
                     <div className='card-body'>
-                        <p className='card-title'>April 9 2025</p>
+                        <p className='card-title'>{entry.date}</p>
                         <h3>{entry.title}</h3>
                         <button className="btn btn-secondary">Read Article</button>
                     </div>
