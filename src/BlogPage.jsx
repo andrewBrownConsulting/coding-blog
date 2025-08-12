@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { parseArticle } from "./parseArticle";
 
 export default function BlogPage() {
     const [blogId, setBlogId] = useState();
@@ -48,9 +49,7 @@ export default function BlogPage() {
                 </div>
                 <div className='row'>
                     <br />
-                    {article?.map((sect, index) => {
-                        return <p key={index}>{sect}</p>
-                    })}
+                    {parseArticle(article)}
                     <p></p>
                 </div>
             </article >
