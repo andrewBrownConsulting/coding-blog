@@ -1,6 +1,35 @@
 {
     "blogEntries": [
         {
+            "id": "software-updates",
+            "title": "Software Updates: Dos and Don'ts",
+            "date": "12th August 2025",
+            "image": "https://i.imgur.com/5beeh2U.png",
+            "imageCaption": "An illustration of the Crowdstrike Outage in an airport baggage gate.",
+            "article": [
+                "## Intro",
+                "Popular software usually receives frequent updates. In fact, modern software _needs_ to be updated to function. The web browser you are viewing this on needs to be updated. The Operating System on your Phone or Laptop needs to be updated. Standards change, requirements change, bugs emerge and products get new features to fulfil user demands.",
+                "Although modern updates are usually extremely well done, understanding how to roll out software updates is a key part of the software lifecycle.",
+                "## Fix and Feature Updates",
+                "We can split updates into two groups; fixes and features. ",
+                "Fixes - things the user shouldn't see (security updates, bug fixes etc). ",
+                "Features - things the user should see (new buttons, updated UI etc).",
+                "A fix is simple because nobody sees it. The user simply won't see the error any more.",
+                "The hard type of update is a feature update. This is because you can annoy users with changes to software they are familiar with. As such, we need to be sensitive to the user. The user trusts you to not break their product. They have a mental map of how everything works so we need to keep it the same. Any time we are changing the app, we need to be tasteful, keep the user informed and be persuasive.",
+                "## Strategies for roll out",
+                "The easiest type of roll out is to push the update to everyone at once - referred to as 'big-bang'. There are some issues with big-bang such as if there is a major bug that was missed in testing or extremely negative user feedback regarding a feature.",
+                "The safer approach is to deploy to a subset of your users. Get feedback and later have a wide release. You can see if you've missed anything with minimal reputational damage. However, this is more expensive to set up and delays updates.",
+                "Rule of thumb: big product - phased, small product - all at once.",
+                "## The worst update of all time",
+                "What would happen if Y2K did happen? What if a huge amount of computers crashed all at once? Well... that did happen. Last year. The 'Crowdstrike Outage'  (19th of July, 2024) was arguably the worst software update of all time and completely avoidable. ",
+                "In short, the outage was caused by a security update to Crowdstrike's Falcon product with a logical error. As Falcon has special privilege to low level OS commands, Falcon caused Windows to crash... on over 8.5 million machines.",
+                "The fix was issued within hours but by then, the damage was done.",
+                "How would you avoid this? Well... don't use a Big-Bang rollout when you have your software running on 8.5 million devices. This was a leadership problem, they did not plan for mistakes to happen.",
+                "## Conclusion",
+                "Updating Software is _usually_ fairly simple these days. Most software can be frequently updated and feedback is readily available. Big companies value reputation over velocity and have entire teams dedicated to effectively rolling out updates their software."
+            ]
+        },
+        {
             "id": "starting-a-blog",
             "title": "Yes... I'm starting a Daily Blog in 2025",
             "date": "10th August 2025",
