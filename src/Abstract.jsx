@@ -2,7 +2,7 @@ export default function Abstract() {
     return (
         <section id='intro' className='row justify-content-center'>
             <div className='col-12 col-sm-4 text-center'>
-                <img className='img-fluid rounded' src={'/londonPark.jpeg'} alt='Intro' />
+                <img className='img-fluid rounded' src={'https://i.imgur.com/cgaG4QM.jpeg'} alt='Intro' />
             </div >
             <div className='col-12 col-sm-8'>
                 <h1>Welcome to my Blog!</h1>
