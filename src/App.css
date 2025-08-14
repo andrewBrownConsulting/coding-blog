@@ -1,7 +1,18 @@
-img {
-  max-height: 60vh;
-  object-fit: contain;
+.card-img {
+  aspect-ratio: 1.5;
+  object-fit: cover;
 }
+
+.card-title {
+  display: block;
+  overflow: hidden;
+  /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  max-height: 3.6em;
+  line-height: 1.2em;
+}
+
 
 nav {
   width: 100%;
