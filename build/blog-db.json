@@ -1,6 +1,35 @@
 {
     "blogEntries": [
         {
+            "id": "phone-server",
+            "title": "I'm Running this Website on a Phone",
+            "date": "14th August 2025",
+            "image": "https://i.imgur.com/XqaWwSW.jpeg",
+            "imageCaption": "Termux running on a Moto E14",
+            "article": [
+                "## Intro ",
+                "Ever since I was a child I've enjoyed using things not for their intended purpose. I'd love to watch someone use a brushless drill motor in an electric bike. That's part of the fun of hacking... taking things well beyond what the manufacturer ever imagined. ",
+                "Well... I've come want to host this blog and although I don't have a home server right now I still wanted to self host. That's why I'm using a phone!",
+                "## Why run a server from an old phone",
+                "Paywalls - Look at medium.com. You might think of it as a free space to upload your blog. Oh wait... your blog is now behind a paywall. This is a trend that's not likely to change.",
+                "Customisation - If you use a site maker, you are usually locked down to a specific template. If you know how to code front-end, this is doubly frustrating.",
+                "Learning Experience- I've personally learned a lot about back-end engineering from doing this. It's really quite easy. ",
+                "That said, you'll need to put aside an afternoon to get it set up. ",
+                "## Run a Node Server on Android",
+                "This is not a tutorial. Tutorials exist already. The basic idea is that you can run Termux, an android terminal emulator which runs on top of your Android OS. It's able to run code directly on your device's kernel but does not have root access.",
+                "It runs very slow but my device is a Moto E14 which was £50 from amazon. ",
+                "## Better Options (if you have more money)",
+                "A common situation is to hire a VM on a server. Or hire and entire server. This is a good option for some but has a monthly subscription attached and usually restrictions on what you're allowed to run.",
+                "If you have the money, a raspberry pi is a great cheapish option. It's massively more powerful than a phone, can be expanded with storage, networking etc. However, with a case and charger you're talking in the region of £100. This makes a lot more sense if you plan on self hosting more than just a blog.",
+                "## Planned upgrades",
+                "The Termux instance is very slow. A better option is to flash an instance of ubuntu server onto the phone. I thought of this but as my only USB-C cable is not a data cable, I can't do it right now.",
+                "After I get the R-Pi, I'll set up a few extras. Currently the blog uses a JSON file which I edit manually but I'll set up a MongoDB instance soon. I'd like to self host this as a microservice. ",
+                "Also, I would like to add a CI/CD pipeline. Again, this would need a much more powerful server which can handle builds, tests and deployment. This is completely unnecessary for a blog but would be useful practice.",
+                "## Conclusion",
+                "This is not a forever solution. It's fairly obvious that I'll need to upgrade. That said, having _a_ solution is more important that _the_ solution right now."
+            ]
+        },
+        {
             "id": "software-updates",
             "title": "Software Updates: Dos and Don'ts",
             "date": "12th August 2025",
