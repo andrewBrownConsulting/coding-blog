@@ -1,8 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { BrowserRouter } from 'react-router';
+test('Test the header appears', () => {
+  render(
+    <BrowserRouter >
+      <App />
+    </BrowserRouter >
+  );
+  const header = screen.getByText(/Welcome to my Blog!/i);
+  expect(header).toBeInTheDocument();
+});
+test('Test the image loads', () => {
+  render(
+    <BrowserRouter >
+      <App />
+    </BrowserRouter >
+  );
+  const image = screen.getByAltText("Site Logo");
+  expect(image).toBeInTheDocument();
 });
