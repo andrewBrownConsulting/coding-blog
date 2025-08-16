@@ -11,18 +11,10 @@ export default function BlogPage() {
             fetch('/blog-db.json')
                 .then(response => response.json())
                 .then(data => data.blogEntries.find((entry) => entry.id === blogId))
-                .then(blogEntry => setBlogData(blogEntry))
+                .then(blogEntry => { setBlogData(blogEntry); document.title = blogEntry.title })
                 .catch((error) => console.log(error))
         }, []
     )
-    useEffect(() => {
-        if (blogData) {
-            const { title } = blogData;
-            document.title = title;
-        }
-    }
-        , [blogData, blogId])
-
     function wordCount(articleArray) {
         let counter = 0;
         articleArray.forEach(element => {
