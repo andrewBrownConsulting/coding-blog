@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { parseArticle } from "./parseArticle";
+import { parseArticle } from "../parseArticle";
 
 export default function BlogPage() {
     const [blogId, setBlogId] = useState();

@@ -1,11 +1,11 @@
 import './App.css';
-import HomePage from './HomePage';
-import AboutMe from './AboutMe';
-import Contact from './Contact';
-import BlogPage from './BlogPage';
+import HomePage from './Components/HomePage';
+import AboutMe from './Components/AboutMe';
+import Contact from './Components/Contact';
+import BlogPage from './Components/BlogPage';
 import { Link, Route, Routes } from 'react-router'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer';
+import Footer from './Components/Footer';
 
 function App() {
   return (
