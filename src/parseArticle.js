@@ -3,7 +3,7 @@ export function parseArticle(article) {
 
     let parsedArticle = article?.map((sect, index) => {
         if (sect.charAt(0) === '#')
-            return <h2 key={index}>{sect.replace(/#/g, "")}</h2>
+            return <h2 className='article-header' key={index}>{sect.replace(/#/g, "")}</h2>
         if (sect.startsWith('image:')) {
             const source = sect.split("image:")[1];
             return <img key={index} src={source} />
@@ -15,7 +15,7 @@ export function parseArticle(article) {
                     <em key={subindex}>{substr.slice(1, -1)}</em> :
                     <span key={subindex}>{substr}</span>
             ))
-            return <p key={index}>{replaced}</p>
+            return <p className="article-text" key={index}>{replaced}</p>
         }
     })
     return parsedArticle;

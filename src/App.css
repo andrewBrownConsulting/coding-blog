@@ -1,6 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 900px;
+}
+
 .card-img {
   aspect-ratio: 1.5;
   object-fit: cover;
+}
+
+article {
+  max-width: 45em;
+  margin: auto;
+}
+
+.article-header {
+  margin-top: 0.5em !important;
+}
+
+.article-text {
+  margin-bottom: 0.5em;
 }
 
 .card-title {
@@ -68,6 +91,10 @@ li a:hover {
 
 footer {
   background-color: black;
+}
+
+footer ul {
+  margin-bottom: 0 !important
 }
 
 footer img {
