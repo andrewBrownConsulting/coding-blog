@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <>
+    <div className='container'>
       <nav className='container'>
         <ul className='row text-center p-4'>
           <li className='col'><Link className='link' to='/'><img className='img-fluid' src='/logoWhite.svg' alt='Site Logo' /></Link></li>
@@ -25,7 +25,7 @@ function App() {
         <Route path='/blog' element={<BlogPage />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
