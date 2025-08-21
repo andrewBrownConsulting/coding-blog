@@ -36,7 +36,7 @@ export default function BlogPage() {
                             <p>Length: {words} words ({Math.round(words / 200)} mins)</p>
                         </div>
                         <figure className='col-12 col-md-6'>
-                            < img className='img-fluid rounded' src={image} alt='Post' />
+                            <img className='img-fluid rounded' src={image} alt='Post' />
                             <figcaption className='d-block fst-italic text-center'>{imageCaption}</figcaption>
                         </figure>
                     </div>
