@@ -6,7 +6,9 @@
             "date": "25th August 2025",
             "image": "/documentation.png",
             "imageCaption": "Placeholder",
-            "article": []
+            "article": [
+                "I haven't written this one yet."
+            ]
         },
         {
             "id": "networking",
