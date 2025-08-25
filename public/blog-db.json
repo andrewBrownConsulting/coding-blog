@@ -1,10 +1,18 @@
 {
     "blogEntries": [
         {
+            "id": "documentation",
+            "title": "A search for the Perfect Documentation",
+            "date": "25th August 2025",
+            "image": "/documentation.png",
+            "imageCaption": "Placeholder",
+            "article": []
+        },
+        {
             "id": "networking",
             "title": "Networking (is) for Dummies",
             "date": "20th August 2025",
-            "image": "https://i.imgur.com/U0Bs4Uv.jpeg",
+            "image": "/salesman.png",
             "imageCaption": "The ill-fated salesman Harry Ellis from 'Die Hard'.",
             "article": [
                 "## Introduction",
@@ -54,8 +62,8 @@
             "id": "learning-process-1",
             "title": "Improving my Learning Method (part 1)",
             "date": "15th August 2025",
-            "image": "https://i.imgur.com/MgWTU9G.jpeg",
-            "imageCaption": "A flow chart of what happens in my brain when I take notes",
+            "image": "/big-brain3.png",
+            "imageCaption": "How I feel when taking great notes",
             "article": [
                 "## Intro",
                 "The point of this blog is to examine what I do and how I can do it better. Currently I'm trying to learn front-end development and so I'm examining the learning process and seeing what I can improve.",
