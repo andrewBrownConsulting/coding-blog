@@ -4,7 +4,7 @@
             "id": "documentation",
             "title": "A search for the Perfect Documentation",
             "date": "25th August 2025",
-            "image": "/documentation.png",
+            "image": "https://i.imgur.com/vTcV33k.png",
             "imageCaption": "Placeholder",
             "article": [
                 "I haven't written this one yet."
@@ -14,7 +14,7 @@
             "id": "networking",
             "title": "Networking (is) for Dummies",
             "date": "20th August 2025",
-            "image": "/salesman.png",
+            "image": "https://i.imgur.com/qubAYLT.png",
             "imageCaption": "The ill-fated salesman Harry Ellis from 'Die Hard'.",
             "article": [
                 "## Introduction",
@@ -64,7 +64,7 @@
             "id": "learning-process-1",
             "title": "Improving my Learning Method (part 1)",
             "date": "15th August 2025",
-            "image": "/big-brain3.png",
+            "image": "https://i.imgur.com/HaDU7ZK.png",
             "imageCaption": "How I feel when taking great notes",
             "article": [
                 "## Intro",
