@@ -1,5 +1,4 @@
 .card {
-  box-shadow: 0.2em 0.2em 0.5em 0.01em;
   text-decoration: none;
 }
 
@@ -15,9 +14,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 900px;
-}
 
 .card-img {
   aspect-ratio: 1.5;
@@ -72,6 +68,18 @@ nav img {
   text-decoration: none;
 }
 
+.highlight:hover {
+  background-color: gainsboro;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.highlight img {
+  aspect-ratio: 2;
+  object-fit: cover;
+  background-color: lightgray;
+}
+
 li {
   list-style-type: none;
 }
@@ -89,8 +97,13 @@ li a:hover {
   color: #abb8c3;
 }
 
-
-
+.abstract-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 footer {
   background-color: black;

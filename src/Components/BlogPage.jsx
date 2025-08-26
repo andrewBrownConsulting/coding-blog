@@ -26,26 +26,26 @@ export default function BlogPage() {
         const { title, article, image, date, imageCaption } = blogData;
         const words = wordCount(article);
         return (
-            <article  >
-                <div className="container">
-                    <div className='row'>
-                        <div className='col-12 col-md-6'>
-                            <h3 className=' fs-1'>{title}</h3>
-                            <p className='card-title'>{date}</p>
-                            <p>Author - Andrew Brown</p>
-                            <p>Length: {words} words ({Math.round(words / 200)} mins)</p>
-                        </div>
-                        <figure className='col-12 col-md-6'>
-                            <img className='img-fluid rounded' src={image} alt='Post' />
-                            <figcaption className='d-block fst-italic text-center'>{imageCaption}</figcaption>
-                        </figure>
+            <div className="container">
+                <div className='row'>
+                    <div className='col-12 col-md-6'>
+                        <h3 className=' fs-1'>{title}</h3>
+                        <p className='card-title'>{date}</p>
+                        <p>Author - Andrew Brown</p>
+                        <p>Length: {words} words ({Math.round(words / 200)} mins)</p>
                     </div>
+                    <figure className='col-12 col-md-6'>
+                        <img className='img-fluid rounded' src={image} alt='Post' />
+                        <figcaption className='d-block fst-italic '>{imageCaption}</figcaption>
+                    </figure>
+                </div>
+                <article>
                     <div className='row'>
                         <br />
                         {parseArticle(article)}
                     </div>
-                </div>
-            </article >
+                </article >
+            </div>
         )
     }
 }
