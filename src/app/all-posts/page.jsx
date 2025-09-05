@@ -1,12 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
-import BlogCard from '../Components/BlogCard';
+import BlogCard from '../components/BlogCard';
 export default function AllPosts() {
     const [blogData, setBlogData] = useState();
     useEffect(
         () => {
             document.title = 'Andrew Brown Blog'
-            fetch('/blog-db.json')
+            fetch('https://localhost:9000/database')
                 .then(response => response.json())
                 .then(data => setBlogData(data))
         }, []

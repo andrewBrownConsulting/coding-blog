@@ -1,19 +1,18 @@
 'use client'
-import BlogCard from './Components/BlogCard';
-import Abstract from './Components/Abstract';
-import Highlight from './Components/Highlight';
-import { useEffect, useState } from 'react';
+import BlogCard from './components/BlogCard';
+import Abstract from './components/Abstract';
+import Highlight from './components/Highlight';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 export default function HomePage() {
   const [blogData, setBlogData] = useState();
   useEffect(
     () => {
       document.title = 'Andrew Brown Blog'
-      fetch('/blog-db.json')
+      fetch('https://localhost:9000/database')
         .then(response => response.json())
-        .then(data => setBlogData(data))
-    }, []
-  )
+        .then(data => { console.log(data); setBlogData(data) })
+    }, []);
   return (
     <main className='container m-0 p-0'>
       <div className='row'>
@@ -26,7 +25,7 @@ export default function HomePage() {
       </div>
       <section id='recent posts' className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 mb-2'>
         {blogData &&
-          blogData.blogEntries.map(
+          blogData.map(
             (entry, index) => {
               if (index > 0 && index < 6)
                 return (<BlogCard key={entry.id} entry={entry} />)
