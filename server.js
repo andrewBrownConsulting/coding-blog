@@ -5,17 +5,8 @@ import path from "path";
 import express from "express";
 import db from './db.js';
 
-// Enable CORS for all routes
-// This allows your Next.js frontend to access this backend server
-// when they are running on different ports during development
-
-// Apply CORS middleware to all routes
 const app = express();
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+
 
 const PORT = process.env.PORT || 9000;
 app.get('/database', async (req, res) => {
@@ -51,6 +42,13 @@ app.get('/', (req, res) => {
     res.send('Hello, this is the Express server!\n Access /database to get the blog data.');
 });
 
+// CORS middleware
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "http://192.168.1.159:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 // Load SSL key & certificate
 const options = {
     key: fs.readFileSync(path.join("certs", "server.key")),
