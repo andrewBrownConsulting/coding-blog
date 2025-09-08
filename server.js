@@ -7,6 +7,9 @@ import db from './db.js';
 import cors from "cors";
 const app = express();
 
+// CORS middleware
+app.use(cors({ origin: ['https://localhost:3000', 'https://blog.andrewb.site'] }));
+
 
 const PORT = process.env.PORT || 9000;
 app.get('/database', async (req, res) => {
@@ -42,8 +45,6 @@ app.get('/', (req, res) => {
     res.send('Hello, this is the Express server!\n Access /database to get the blog data.');
 });
 
-// CORS middleware
-app.use(cors({ origin: '*' }));
 // Load SSL key & certificate
 const options = {
     key: fs.readFileSync(path.join("certs", "server.key")),
