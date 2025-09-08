@@ -4,7 +4,7 @@ const pool = new Pool({
     password: '1234',
     host: 'localhost',
     port: 5432, // default Postgres port
-    database: 'template1'
+    database: 'blog'
 });
 module.exports = {
     query: (text, params) => pool.query(text, params)
