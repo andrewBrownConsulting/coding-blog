@@ -4,7 +4,7 @@ import http from "http";
 import path from "path";
 import express from "express";
 import db from './db.js';
-
+import cors from "cors";
 const app = express();
 
 
@@ -43,12 +43,7 @@ app.get('/', (req, res) => {
 });
 
 // CORS middleware
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Origin", "http://192.168.1.159:3000"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors({ origin: '*' }));
 // Load SSL key & certificate
 const options = {
     key: fs.readFileSync(path.join("certs", "server.key")),
