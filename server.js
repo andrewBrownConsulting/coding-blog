@@ -8,7 +8,7 @@ import cors from "cors";
 const app = express();
 
 // CORS middleware
-app.use(cors({ origin: ['https://localhost:3000', 'https://blog.andrewb.site'] }));
+app.use(cors({ origin: ['https://localhost:3000', 'https://blog.andrewb.site', 'https://192.168.1.159:3000'] }));
 
 
 const PORT = process.env.PORT || 9000;
