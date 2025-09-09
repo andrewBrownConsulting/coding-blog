@@ -2,7 +2,7 @@ import { Pool } from 'pg';
 const pool = new Pool({
     user: 'postgres',
     password: '1234',
-    host: 'localhost', // name of the postgres service in docker-compose.yaml
+    host: 'http://192.168.1.159', // name of the postgres service in docker-compose.yaml
     port: 5432, // default Postgres port
     database: 'blog_db'
 });
