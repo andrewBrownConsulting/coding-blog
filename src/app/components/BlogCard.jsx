@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 export default function BlogCard({ entry }) {
+    console.log(entry);
     return (
         <div className="col" key={entry.id} >
             <article className='card p-3 border-0'>

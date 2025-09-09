@@ -9,6 +9,16 @@
             "name": "main_data_server",
             "database": "template1",
             "username": "postgres"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "docker_db",
+            "database": "blog_db",
+            "username": "postgres"
         }
     ]
 }
