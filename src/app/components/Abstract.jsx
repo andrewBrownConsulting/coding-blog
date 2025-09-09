@@ -1,10 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
 export default function Abstract() {
     return (
         <div className='col-12 col-md-6'>
             <div className="row">
                 <div className='col-6 text-center'>
-                    <img className='img-fluid rounded' src={'https://i.imgur.com/cgaG4QM.jpeg'} alt='Intro' />
+                    <Image className='img-fluid rounded' src={'/images/me.png'} alt='Intro' width={400} height={600} />
                 </div >
                 <div className='col-6'>
                     <p className='abstract-text'>

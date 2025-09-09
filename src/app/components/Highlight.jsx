@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from 'react';
+import { parseDate } from "../utils.js";
 export default function Highlight() {
     const [blogData, setBlogData] = useState();
     useEffect(
@@ -26,7 +27,7 @@ export default function Highlight() {
                     />
 
                     <h1 >{title} </h1>
-                    <p>{ }</p>
+                    <p>{parseDate(date_created)}</p>
                 </Link >
             </div>
         );

@@ -2,6 +2,7 @@
 import { use, useEffect, useState } from "react";
 import { parseArticle } from "../parseArticle.js";
 import { parseDate } from "../../utils.js";
+import Image from "next/image.js";
 export default function BlogPage({ params }: { params: Promise<{ id: string }> }) {
     const [blogData, setBlogData] = useState();
     const { id } = use(params);  // unwraps the promise
@@ -22,7 +23,7 @@ export default function BlogPage({ params }: { params: Promise<{ id: string }> }
     //
 
     if (blogData) {
-        const { title, article, image_url, date_created, imageCaption } = blogData;
+        const { title, article, date_created, image_caption } = blogData;
         const words = wordCount(article);
         return (
             <div className="container">
@@ -34,8 +35,14 @@ export default function BlogPage({ params }: { params: Promise<{ id: string }> }
                         <p>Length: {words} words ({Math.round(words / 200)} mins)</p>
                     </div>
                     <figure className='col-12 col-md-6'>
-                        <img className='img-fluid rounded' src={image_url} alt='Post' />
-                        <figcaption className='d-block fst-italic '>{imageCaption}</figcaption>
+                        <Image
+                            className='img-fluid rounded'
+                            src={'/images/' + id + '.png'}
+                            alt='Post'
+                            width={400}
+                            height={250}
+                        />
+                        <figcaption className='d-block fst-italic '>{image_caption}</figcaption>
                     </figure>
                 </div>
                 <article>
