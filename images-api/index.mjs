@@ -5,7 +5,11 @@ import { fileURLToPath } from 'url';
 const app = express();
 const PORT = process.env.PORT || 9002;
 import cors from "cors";
-app.use(cors()); // allow all origins
+app.use(cors(
+    {
+        origin: ["http://localhost:3000", 'https://blog.andrewb.site']
+    }
+)); // allow all origins
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
