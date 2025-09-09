@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import { getImageFromId } from '../utils.js';
 export default function Abstract() {
     return (
         <div className='col-12 col-md-6'>
             <div className="row">
                 <div className='col-6 text-center'>
-                    <Image className='img-fluid rounded' src={'/images/me.png'} alt='Intro' width={400} height={600} />
+                    {getImageFromId('me')}
                 </div >
                 <div className='col-6'>
                     <p className='abstract-text'>

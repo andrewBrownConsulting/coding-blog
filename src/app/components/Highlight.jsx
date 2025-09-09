@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from 'react';
-import { parseDate } from "../utils.js";
+import { getImageFromId, parseDate } from "../utils.js";
 export default function Highlight() {
     const [blogData, setBlogData] = useState();
     useEffect(
@@ -18,14 +18,7 @@ export default function Highlight() {
         return (
             <div className='col-12 col-md-6 highlight rounded pt-3'>
                 <Link className='link-dark' href={'/blog/' + id}>
-                    <Image
-                        className='img-fluid rounded'
-                        src={image_url}
-                        alt='Post'
-                        width={600}
-                        height={400}
-                    />
-
+                    {getImageFromId(id)}
                     <h1 >{title} </h1>
                     <p>{parseDate(date_created)}</p>
                 </Link >

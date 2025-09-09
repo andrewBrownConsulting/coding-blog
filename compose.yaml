@@ -13,9 +13,7 @@ services:
     command: npm start
     environment:
       NODE_ENV: production
-    depends_on:
-      db:
-        condition: service_healthy
+      NEXT_PUBLIC_IMAGE_API: http://localhost:9002/images
     ports:
       - 3000:3000
     develop:
@@ -26,6 +24,9 @@ services:
           ignore: node_modules
         - action: rebuild
           path: package.json
+    depends_on:
+      db:
+        condition: service_healthy
 
   db:
     image: postgres
@@ -61,6 +62,11 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
+  images-api:
+    build: ./images-api
+    ports:
+      - 9002:9002
+    environment:
+      NODE_ENV: production
 volumes:
   pgdata:
