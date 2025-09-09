@@ -1,4 +1,4 @@
-import { query } from "./db.mjs";
+import { blog_query } from "./db_external.mjs";
 const blogs = [
     {
         "id": "documentation",
@@ -231,5 +231,5 @@ const blogs = [
 
 
 for (const blog of blogs) {
-    query(`insert into blog_entries (id, title, date_created, image_url, image_caption, article) values ($1, $2, $3, $4, $5, $6)`, [blog.id, blog.title, blog.date, blog.image, blog.imageCaption, '{' + blog.article.join('\n') + '}'])
+    blog_query(`insert into blog_entries (id, title, date_created, image_url, image_caption, article) values ($1, $2, $3, $4, $5, $6)`, [blog.id, blog.title, blog.date, blog.image, blog.imageCaption, blog.article])
 }
