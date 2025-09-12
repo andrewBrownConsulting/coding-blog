@@ -15,7 +15,7 @@ export default function BlogPage({ params }: { params: Promise<{ id: string }> }
     }
     useEffect(() => {
         document.title = 'Andrew Brown Blog';
-        fetch('https://localhost:9000/database/' + id)
+        fetch('https://backend.andrewb.site/database/' + id)
             .then(response => response.json())
             .then(data => setBlogData(data));
     }, []);

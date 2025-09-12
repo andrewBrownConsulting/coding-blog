@@ -13,7 +13,6 @@ services:
     command: npm start
     environment:
       NODE_ENV: production
-      NEXT_PUBLIC_IMAGE_API: http://localhost:9002/images
     ports:
       - 3000:3000
     develop:
@@ -32,9 +31,9 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: '1234'
-      POSTGRES_DB: blog_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -48,6 +47,7 @@ services:
     build: ./backend
     environment:
       NODE_ENV: production
+      IMAGES_API_KEY: ${IMAGES_API_KEY}
     depends_on:
       db:
         condition: service_healthy
@@ -68,5 +68,8 @@ services:
       - 9002:9002
     environment:
       NODE_ENV: production
+  cloudflare-tunnel:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_KEY}
 volumes:
   pgdata:

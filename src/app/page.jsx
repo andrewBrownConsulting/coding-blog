@@ -9,9 +9,9 @@ export default function HomePage() {
   useEffect(
     () => {
       document.title = 'Andrew Brown Blog'
-      fetch('https://localhost:9000/database')
+      fetch('https://backend.andrewb.site/database')
         .then(response => response.json())
-        .then(data => { console.log(data); setBlogData(data) })
+        .then(data => { setBlogData(data) })
     }, []);
   return (
     <main className='container m-0 p-0'>

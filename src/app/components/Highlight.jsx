@@ -8,7 +8,7 @@ export default function Highlight() {
     useEffect(
         () => {
             document.title = 'Andrew Brown Blog'
-            fetch('https://localhost:9000/latest')
+            fetch('https://backend.andrewb.site/latest')
                 .then(response => response.json())
                 .then(data => setBlogData(data))
         }, []

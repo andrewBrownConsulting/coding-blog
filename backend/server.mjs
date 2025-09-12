@@ -8,11 +8,11 @@ import cors from "cors";
 const app = express();
 
 // CORS middleware
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://localhost:3000', 'https://blog.andrewb.site', 'https://192.168.1.159:3000', 'https://192.168.1.159:3000']
-}));
+app.use(cors());
 
-
+app.get('/', (req, res) => {
+    res.send('Hello, this is the Express server!\n Access /database to get the blog data.');
+});
 const PORT = process.env.PORT || 9000;
 app.get('/database', async (req, res) => {
     try {
@@ -51,8 +51,36 @@ app.get('/database/:id', async (req, res) => {
         res.status(500).send('Error retrieving data from database');
     }
 });
-app.get('/', (req, res) => {
-    res.send('Hello, this is the Express server!\n Access /database to get the blog data.');
+app.post('/new-article', express.json(), async (req, res) => {
+    try {
+        const { id, title, image_url, image_caption, article } = req.body;
+        const SQLformattedArticle = '{' + article.join(', ') + '}';
+        const date = new Date().toISOString();
+        blog_query('INSERT INTO blog_entries (id, title, image_url, image_caption, article, date_created) VALUES ($1, $2, $3, $4, $5, $6)', [id, title, image_url, image_caption, SQLformattedArticle, date])
+            .then(() => {
+                res.status(201).send({ response: 'New article created successfully' });
+            })
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ response: 'Error creating new article' });
+    }
+});
+
+app.post('/test-article', express.json(), async (req, res) => {
+    try {
+        const { id, title, image_url, image_caption, article } = { id: 'abc', title: 'Test Title', image_url: 'https://example.com/image.jpg', image_caption: 'Test Caption', article: '{"This is a test article."}' };
+        blog_query('INSERT INTO blog_entries (id, title, image_url, image_caption, article, date_created) VALUES ($1, $2, $3, $4, $5, $6)', [id, title, image_url, image_caption, article, new Date()])
+            .then(() => {
+                res.status(201).send('New article created successfully');
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error creating new article');
+            });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error creating new article');
+    }
 });
 
 // Load SSL key & certificate

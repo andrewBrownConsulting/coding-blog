@@ -6,7 +6,7 @@ export default function AllPosts() {
     useEffect(
         () => {
             document.title = 'Andrew Brown Blog'
-            fetch('https://localhost:9000/database')
+            fetch('https://backend.andrewb.site/database')
                 .then(response => response.json())
                 .then(data => setBlogData(data))
         }, []
