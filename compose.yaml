@@ -48,6 +48,7 @@ services:
     environment:
       NODE_ENV: production
       IMAGES_API_KEY: ${IMAGES_API_KEY}
+      IMAGES_FILE: ${IMAGES_FILE}
     depends_on:
       db:
         condition: service_healthy
@@ -63,11 +64,14 @@ services:
       db:
         condition: service_healthy
   images-api:
-    build: ./images-api
+    build:
+      context: ./images-api
     ports:
       - 9002:9002
     environment:
       NODE_ENV: production
+    volumes:
+      - ./images-api/images:/usr/src/app/images
   cloudflare-tunnel:
     image: cloudflare/cloudflared:latest
     command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_KEY}

@@ -6,7 +6,7 @@ export function parseArticle(article) {
             return <h2 className='article-header' key={index}>{sect.replace(/#/g, "")}</h2>
         if (sect.startsWith('image:')) {
             const source = sect.split("image:")[1];
-            return <img key={index} src={source} />
+            return <img key={index} src={'https://images.andrewb.site/images/' + source + '?api_key=1234'} />
         }
         else {
             //look for _text_ blocks

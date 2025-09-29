@@ -53,8 +53,10 @@ app.get('/database/:id', async (req, res) => {
 });
 app.post('/new-article', express.json(), async (req, res) => {
     try {
+        console.log(req.body);
         const { id, title, image_url, image_caption, article } = req.body;
-        const SQLformattedArticle = '{' + article.join(', ') + '}';
+
+        const SQLformattedArticle = '{"' + article.join('", "') + '"}';
         const date = new Date().toISOString();
         blog_query('INSERT INTO blog_entries (id, title, image_url, image_caption, article, date_created) VALUES ($1, $2, $3, $4, $5, $6)', [id, title, image_url, image_caption, SQLformattedArticle, date])
             .then(() => {

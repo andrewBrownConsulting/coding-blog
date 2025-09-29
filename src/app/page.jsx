@@ -26,7 +26,7 @@ export default function HomePage() {
       <section id='recent posts' className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 mb-2'>
         {blogData &&
           blogData.map((entry, index) => {
-            if (index > 0 && index < 6)
+            if (index > 0 && index <= 6)
               return (<BlogCard key={entry.id} entry={entry} />)
           }
 
