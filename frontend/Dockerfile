@@ -3,7 +3,7 @@ COPY package.json /app/
 COPY next.config.ts /app/
 COPY eslint.config.mjs /app/
 COPY src/ /app/
-COPY .env /app/
+# COPY .env /app/
 WORKDIR /app/
 RUN npm i
 RUN npm run build
