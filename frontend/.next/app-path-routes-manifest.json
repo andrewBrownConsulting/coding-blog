@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/all-posts/page": "/all-posts",
+  "/blog/[id]/page": "/blog/[id]",
+  "/contact/page": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/images/page": "/images",
+  "/page": "/",
+  "/poster/page": "/poster"
+}
