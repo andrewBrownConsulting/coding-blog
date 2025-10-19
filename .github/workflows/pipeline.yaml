@@ -14,7 +14,7 @@ jobs:
           docker build -t andrewb1234/blog-frontend:ubuntu .
           docker push andrewb1234/blog-frontend:ubuntu
           cd ../backend
-          docker build -t andrewb1234/blog-backend:ubutnu .
+          docker build -t andrewb1234/blog-backend:ubuntu .
           docker push andrewb1234/blog-backend:ubuntu
   deploy:
     runs-on: ubuntu-latest
