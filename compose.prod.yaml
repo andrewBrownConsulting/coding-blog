@@ -1,29 +1,29 @@
 services:
   frontend1:
-    image: andrewb1234/blog-frontend:mac
+    image: andrewb1234/blog-frontend:ubuntu
     ports:
-      - 3001:3000
+      - 3000:3000
     depends_on:
       db:
         condition: service_healthy
 
-  frontend2:
-    image: andrewb1234/blog-frontend:mac
-    ports:
-      - 3002:3000
-    depends_on:
-      db:
-        condition: service_healthy
-  frontend3:
-    image: andrewb1234/blog-frontend:mac
-    ports:
-      - 3003:3000
-    depends_on:
-      db:
-        condition: service_healthy
+  # frontend2:
+  #   image: andrewb1234/blog-frontend:ubuntu
+  #   ports:
+  #     - 3002:3000
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  # frontend3:
+  #   image: andrewb1234/blog-frontend:ubuntu
+  #   ports:
+  #     - 3003:3000
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
 
   backend:
-    image: andrewb1234/blog-backend:mac
+    image: andrewb1234/blog-backend:ubuntu
     depends_on:
       db:
         condition: service_healthy

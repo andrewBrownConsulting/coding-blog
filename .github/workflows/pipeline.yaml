@@ -3,11 +3,11 @@ on:
   push:
     branches: [main]
 jobs:
-  build-images: 
+  build-images:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: build docker images for front and back end 
+      - name: build docker images for front and back end
         run: |
           docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
           cd frontend
@@ -20,17 +20,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-images
     steps:
-    - uses: actions/checkout@v4
-    - name: set up ssh 
-      uses: webfactory/ssh-agent@v0.8.0
-      with:
-        ssh-private-key: ${{secrets.EC2_SSH_KEY}}
-    - name: Deploy to EC2 
-      run: |
+      - uses: actions/checkout@v4
+      - name: set up ssh
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{secrets.EC2_SSH_KEY}}
+      - name: Deploy to EC2
+        run: |
           ssh -o StrictHostKeyChecking=no ${{secrets.EC2_USER}}@${{secrets.EC2_HOST}}<<EOF
           mkdir -p ~/blog/
           cd ~/blog/
           sudo docker compose down
           git pull origin main
-          sudo docker compose up -d --build
+          sudo docker compose -f compose.prod.yaml up -d --build
           EOF
