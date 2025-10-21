@@ -59,7 +59,13 @@
       "dangerouslyAllowSVG": false,
       "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
       "contentDispositionType": "attachment",
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "blog-images-s3-andrewb.s3.us-east-1.amazonaws.com",
+          "pathname": "/**"
+        }
+      ],
       "unoptimized": false
     },
     "devIndicators": {

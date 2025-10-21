@@ -1,23 +1,16 @@
-'use client'
-import { useState, useEffect } from 'react'
 import BlogCard from '../components/BlogCard';
-export default function AllPosts() {
-    const [blogData, setBlogData] = useState();
-    useEffect(
-        () => {
-            document.title = 'Andrew Brown Blog'
-            fetch('http://localhost:9001/database')
-                .then(response => response.json())
-                .then(data => setBlogData(data))
-        }, []
-    )
-    return (
-        <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 mb-2'>
-            {blogData &&
-                blogData.map(
-                    entry => <BlogCard key={entry.id} entry={entry} />
-                )
-            }
-        </div >
-    )
+import { fetchAllBlogData } from '../utils.js';
+
+export const dynamic = "force-dynamic";
+
+export default async function AllPosts() {
+  const blogData = await fetchAllBlogData();
+  return (
+    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2 mb-2'>
+      {blogData.map(
+        entry => <BlogCard key={entry.id} entry={entry} />
+      )
+      }
+    </div >
+  )
 }

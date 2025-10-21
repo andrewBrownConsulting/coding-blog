@@ -1,0 +1,60 @@
+services:
+  frontend1:
+    image: andrewb1234/blog-frontend:mac
+    ports:
+      - 3001:3000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend2:
+    image: andrewb1234/blog-frontend:mac
+    ports:
+      - 3002:3000
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend3:
+    image: andrewb1234/blog-frontend:mac
+    ports:
+      - 3003:3000
+    depends_on:
+      db:
+        condition: service_healthy
+
+  backend:
+    image: andrewb1234/blog-backend:mac
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 9000:9000
+      - 9001:9001
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/blog_data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  pgdata:

@@ -1,16 +1,14 @@
-'use client';
-import { useEffect } from "react"
-
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: "About"
+};
 export default function About() {
-    useEffect(() => {
-        document.title = "About Me"
-    }, [])
-    return (
-        <><div className="container ">
-            <p>
-                About me
-            </p>
-        </div>
-        </>
-    )
+  return (
+    <><div className="container ">
+      <p>
+        About me
+      </p>
+    </div>
+    </>
+  )
 }

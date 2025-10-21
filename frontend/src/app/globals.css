@@ -160,3 +160,7 @@ footer img {
   max-height: 50px;
   object-fit: contain;
 }
+
+nav img {
+  object-fit: contain;
+}
