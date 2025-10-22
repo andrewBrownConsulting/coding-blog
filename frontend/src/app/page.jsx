@@ -3,9 +3,8 @@ import Abstract from './components/Abstract';
 import Highlight from './components/Highlight';
 import DummyHighlight from './components/DummyHighlight.jsx'
 import Link from 'next/link';
-import { fetchAllBlogData } from './utils';
 import { Suspense } from 'react';
-
+import { getAllBlogEntries } from './db.js'
 
 export const dynamic = "force-dynamic";
 export const metadata = {
@@ -13,7 +12,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const blogData = await fetchAllBlogData();
+  const blogData = await getAllBlogEntries();
   return (
     <main className='container m-0 p-0'>
       <div className='row'>

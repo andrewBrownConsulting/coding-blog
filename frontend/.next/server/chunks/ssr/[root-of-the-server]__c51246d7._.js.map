@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/andrewbrown/Desktop/webapps/blog/frontend/src/app/about/page.tsx"],"sourcesContent":["import type { Metadata } from 'next';\nexport const metadata: Metadata = {\n  title: \"About\"\n};\nexport default function About() {\n  return (\n    <><div className=\"container \">\n      <p>\n        About me\n      </p>\n    </div>\n    </>\n  )\n}\n"],"names":[],"mappings":";;;;;;;;AACO,MAAM,WAAqB;IAChC,OAAO;AACT;AACe,SAAS;IACtB,qBACE;kBAAE,cAAA,8OAAC;YAAI,WAAU;sBACf,cAAA,8OAAC;0BAAE;;;;;;;;;;;;AAMT","debugId":null}}]
+}

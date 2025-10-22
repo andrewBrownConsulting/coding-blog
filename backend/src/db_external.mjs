@@ -1,9 +1,0 @@
-import { Pool } from 'pg';
-const pool = new Pool({
-    user: 'postgres',
-    password: '1234',
-    host: 'http://192.168.1.159', // name of the postgres service in docker-compose.yaml
-    port: 5432, // default Postgres port
-    database: 'blog_db'
-});
-export const blog_query = (text, params) => pool.query(text, params)

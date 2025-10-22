@@ -1,11 +1,5 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/about/page": "app/about/page.js",
-  "/all-posts/page": "app/all-posts/page.js",
-  "/blog/[id]/page": "app/blog/[id]/page.js",
-  "/contact/page": "app/contact/page.js",
+  "/editor/page": "app/editor/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/images/page": "app/images/page.js",
-  "/page": "app/page.js",
-  "/poster/page": "app/poster/page.js"
+  "/page": "app/page.js"
 }

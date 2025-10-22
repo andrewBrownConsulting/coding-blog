@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/andrewbrown/Desktop/webapps/blog/frontend/src/app/contact/page.tsx"],"sourcesContent":["export default function Contact() {\n    return (\n        <div className=\"container text-center\">\n            <p>Email: <a href=\"mailto:andrew.brown75@yahoo.com\">andrew.brown75@yahoo.com</a></p>\n            <p>Message me on <a href='https://www.linkedin.com/in/andrew-brown-b50592183/'>Linkedin</a></p>\n            <p>Look at my <a href='https://www.github.com/andrewBrownConsulting/'>Github</a></p>\n            <p>Available on Upwork at <a href=\"https://upwork.com/freelancers/andrewb93\">Upwork</a></p>\n        </div>\n    )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,8OAAC;QAAI,WAAU;;0BACX,8OAAC;;oBAAE;kCAAO,8OAAC;wBAAE,MAAK;kCAAkC;;;;;;;;;;;;0BACpD,8OAAC;;oBAAE;kCAAc,8OAAC;wBAAE,MAAK;kCAAsD;;;;;;;;;;;;0BAC/E,8OAAC;;oBAAE;kCAAW,8OAAC;wBAAE,MAAK;kCAAgD;;;;;;;;;;;;0BACtE,8OAAC;;oBAAE;kCAAuB,8OAAC;wBAAE,MAAK;kCAA2C;;;;;;;;;;;;;;;;;;AAGzF","debugId":null}}]
+}

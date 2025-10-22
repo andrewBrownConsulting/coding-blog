@@ -1,6 +1,6 @@
 import { parseArticle } from "../parseArticle.js";
-import { parseDate, getImageFromId, fetchBlogWithId } from "../../utils.js";
-
+import { parseDate, getImageFromId } from "../../utils.js";
+import { getBlogEntryWithId } from '../../db.js'
 export const dynamic = "force-dynamic";
 
 export let metadata = {
@@ -8,7 +8,7 @@ export let metadata = {
 };
 export default async function BlogPage({ params }) {
   const { id } = await params;
-  const blogData = await fetchBlogWithId(id);
+  const blogData = await getBlogEntryWithId(id);
   function wordCount(articleArray) {
     let counter = 0;
     articleArray.forEach(element => {

@@ -1,24 +1,8 @@
 import Image from 'next/image'
-const imagesURL = process.env.NEXT_PUBLIC_IMAGES_BASE_URL ? process.env.NEXT_PUBLIC_IMAGES_BASE_URL : 'https://blog-images-s3-andrewb.s3.us-east-1.amazonaws.com/';
-const apiURL = "http://backend:9001/api/"
+const imagesURL = process.env.NEXT_PUBLIC_IMAGES_BASE_URL;
 
 export function parseDate(dateString) {
   return new Date(Date.parse(dateString)).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
-}
-export async function fetchAllBlogData() {
-  const blogRes = await fetch(apiURL + "database")
-  const data = await blogRes.json();
-  return data;
-}
-export async function fetchLatestBlog() {
-  const blogRes = await fetch(apiURL + 'latest');
-  const blogData = await blogRes.json();
-  return blogData;
-}
-export async function fetchBlogWithId(id) {
-  const blogRes = await fetch(apiURL + 'database/' + id);
-  const blogData = await blogRes.json();
-  return blogData;
 }
 export function getLogo(id) {
   return <div>
