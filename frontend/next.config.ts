@@ -1,14 +1,31 @@
-import type { NextConfig } from "next";
-
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: "blog-images-s3-andrewb.s3.us-east-1.amazonaws.com",
-        pathname: '/**'
-      }
-    ]
+        protocol: "https",
+        hostname: "nginx",
+        port: "443",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "http",
+        hostname: "nginx",
+        port: "80",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "localhost",
+        port: "443",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "80",
+        pathname: "/images/**",
+      },
+    ],
   }
 };
 

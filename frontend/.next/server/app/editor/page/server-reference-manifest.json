@@ -1,4 +1,50 @@
 {
-  "node": {},
+  "node": {
+    "7c68d0ae755202d7ac1a70158c8e0992f6fcd8bd4e": {
+      "workers": {
+        "app/editor/page": {
+          "moduleId": "[project]/.next-internal/server/app/editor/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/editor/addPost.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "addPost",
+          "filename": "src/app/editor/addPost.js"
+        }
+      },
+      "layer": {
+        "app/editor/page": "action-browser"
+      },
+      "exportedName": "addPost",
+      "filename": "src/app/editor/addPost.js"
+    },
+    "00e642685f8fa6528f2d10f07fd0bfc878bc59a2b0": {
+      "workers": {
+        "app/editor/page": {
+          "moduleId": "[project]/.next-internal/server/app/editor/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/editor/addPost.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "getIds",
+          "filename": "src/app/editor/addPost.js"
+        }
+      },
+      "layer": {
+        "app/editor/page": "action-browser"
+      },
+      "exportedName": "getIds",
+      "filename": "src/app/editor/addPost.js"
+    },
+    "40c8afec56a19bb1487ba64b5d69867550e8375046": {
+      "workers": {
+        "app/editor/page": {
+          "moduleId": "[project]/.next-internal/server/app/editor/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/editor/addPost.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "serverGetBlogEntryWithId",
+          "filename": "src/app/editor/addPost.js"
+        }
+      },
+      "layer": {
+        "app/editor/page": "action-browser"
+      },
+      "exportedName": "serverGetBlogEntryWithId",
+      "filename": "src/app/editor/addPost.js"
+    }
+  },
   "edge": {}
 }

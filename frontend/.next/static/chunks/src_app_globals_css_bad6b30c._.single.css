@@ -158,4 +158,8 @@ nav img {
   object-fit: contain;
 }
 
+input, textarea {
+  width: 100%;
+}
+
 /*# sourceMappingURL=src_app_globals_css_bad6b30c._.single.css.map*/

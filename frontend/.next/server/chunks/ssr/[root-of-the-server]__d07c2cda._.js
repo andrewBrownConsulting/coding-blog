@@ -59,6 +59,10 @@ const __TURBOPACK__default__export__ = fontData;
 "use strict";
 
 __turbopack_context__.s([
+    "formatArticle",
+    ()=>formatArticle,
+    "getImageFromFilename",
+    ()=>getImageFromFilename,
     "getImageFromId",
     ()=>getImageFromId,
     "getLogo",
@@ -70,13 +74,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-rsc] (ecmascript)");
 ;
 ;
-const imagesURL = ("TURBOPACK compile-time value", "https://blog-images-s3-andrewb.s3.us-east-1.amazonaws.com/");
+const imagesURL = "https://localhost/images/" //process.env.NEXT_PUBLIC_IMAGES_BASE_URL;
+;
 function parseDate(dateString) {
     return new Date(Date.parse(dateString)).toLocaleDateString("en-GB", {
         day: "numeric",
         month: "long",
         year: "numeric"
     });
+}
+function formatArticle(article) {
+    const articleArray = article.split('\n');
+    return articleArray;
 }
 function getLogo(id) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -85,15 +94,16 @@ function getLogo(id) {
             src: imagesURL + id + '.png',
             width: 100,
             height: 100,
-            alt: "Logo"
+            alt: "Logo",
+            unoptimized: true
         }, void 0, false, {
             fileName: "[project]/src/app/utils.js",
-            lineNumber: 9,
+            lineNumber: 13,
             columnNumber: 5
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/utils.js",
-        lineNumber: 8,
+        lineNumber: 12,
         columnNumber: 10
     }, this);
 }
@@ -103,10 +113,25 @@ function getImageFromId(id, card = false) {
         src: imagesURL + id + '.png',
         width: 500,
         height: 300,
-        alt: "Post"
+        alt: id,
+        unoptimized: true
     }, id, false, {
         fileName: "[project]/src/app/utils.js",
-        lineNumber: 20,
+        lineNumber: 25,
+        columnNumber: 5
+    }, this);
+}
+function getImageFromFilename(filename, card = false) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+        className: 'img-fluid rounded ' + (card ? 'card-img' : ''),
+        src: imagesURL + filename,
+        width: 500,
+        height: 300,
+        alt: filename,
+        unoptimized: true
+    }, filename, false, {
+        fileName: "[project]/src/app/utils.js",
+        lineNumber: 38,
         columnNumber: 5
     }, this);
 }
@@ -2913,8 +2938,27 @@ function getImageProps(imgProps) {
             "remotePatterns": ("TURBOPACK compile-time value", [
                 ("TURBOPACK compile-time value", {
                     "protocol": ("TURBOPACK compile-time value", "https"),
-                    "hostname": ("TURBOPACK compile-time value", "blog-images-s3-andrewb.s3.us-east-1.amazonaws.com"),
-                    "pathname": ("TURBOPACK compile-time value", "/**")
+                    "hostname": ("TURBOPACK compile-time value", "nginx"),
+                    "port": ("TURBOPACK compile-time value", "443"),
+                    "pathname": ("TURBOPACK compile-time value", "/images/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "nginx"),
+                    "port": ("TURBOPACK compile-time value", "80"),
+                    "pathname": ("TURBOPACK compile-time value", "/images/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "https"),
+                    "hostname": ("TURBOPACK compile-time value", "localhost"),
+                    "port": ("TURBOPACK compile-time value", "443"),
+                    "pathname": ("TURBOPACK compile-time value", "/images/**")
+                }),
+                ("TURBOPACK compile-time value", {
+                    "protocol": ("TURBOPACK compile-time value", "http"),
+                    "hostname": ("TURBOPACK compile-time value", "localhost"),
+                    "port": ("TURBOPACK compile-time value", "80"),
+                    "pathname": ("TURBOPACK compile-time value", "/images/**")
                 })
             ])
         })

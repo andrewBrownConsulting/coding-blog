@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":["file:///Users/andrewbrown/Desktop/webapps/blog/frontend/src/app/api/about/route.js"],"sourcesContent":["export async function GET(request) {\n  return Response.json({ message: \"Hey there from about\" })\n}\n"],"names":[],"mappings":";;;;AAAO,eAAe,IAAI,OAAO;IAC/B,OAAO,SAAS,IAAI,CAAC;QAAE,SAAS;IAAuB;AACzD","debugId":null}}]
+}

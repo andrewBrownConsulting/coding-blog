@@ -201,12 +201,20 @@ __turbopack_async_result__();
 return __turbopack_context__.a(async (__turbopack_handle_async_dependencies__, __turbopack_async_result__) => { try {
 
 __turbopack_context__.s([
+    "addBlogEntry",
+    ()=>addBlogEntry,
     "getAllBlogEntries",
     ()=>getAllBlogEntries,
+    "getAllBlogIds",
+    ()=>getAllBlogIds,
     "getBlogEntryWithId",
     ()=>getBlogEntryWithId,
     "getLatestBlogEntry",
-    ()=>getLatestBlogEntry
+    ()=>getLatestBlogEntry,
+    "makeDataTable",
+    ()=>makeDataTable,
+    "updateBlogEntry",
+    ()=>updateBlogEntry
 ]);
 var __TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$external$5d$__$28$pg$2c$__esm_import$29$__ = __turbopack_context__.i("[externals]/pg [external] (pg, esm_import)");
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
@@ -221,6 +229,11 @@ const pool = new __TURBOPACK__imported__module__$5b$externals$5d2f$pg__$5b$exter
     database: process.env.POSTGRES_DB
 });
 const blog_query = (text, params)=>pool.query(text, params);
+async function getAllBlogIds() {
+    makeDataTable();
+    const database = await blog_query('select id from blog_entries');
+    return database.rows;
+}
 async function getAllBlogEntries() {
     const database = await blog_query('select * from blog_entries order by date_created DESC');
     return database.rows;
@@ -234,6 +247,32 @@ async function getBlogEntryWithId(id) {
         id
     ]);
     return database.rows[0];
+}
+async function addBlogEntry(id, title, img_caption, article) {
+    let date_created = new Date();
+    const database = await blog_query('INSERT INTO blog_entries (id, title, date_created, image_url, image_caption, article) VALUES ($1, $2, $3, $4, $5, $6)', [
+        id,
+        title,
+        date_created,
+        "N/A",
+        img_caption,
+        article
+    ]);
+    console.log(database);
+    return database.rows[0];
+}
+async function updateBlogEntry(id, title, img_caption, article) {
+    const database = await blog_query('UPDATE blog_entries set title = $1, image_caption=$2, article=$3 where id=$4', [
+        title,
+        img_caption,
+        article,
+        id
+    ]);
+    console.log(database);
+}
+async function makeDataTable() {
+    let tableQuery = 'create table if not exists blog_entries (\n' + 'id text,\n' + 'title text,\n' + 'date_created date,\n' + 'image_url text,\n' + 'image_caption text,\n' + 'article text[]\n' + ')';
+    blog_query(tableQuery);
 }
 __turbopack_async_result__();
 } catch(e) { __turbopack_async_result__(e); } }, false);}),

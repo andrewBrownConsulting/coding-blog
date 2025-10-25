@@ -13,9 +13,6 @@ jobs:
           cd frontend
           docker build -t andrewb1234/blog-frontend:ubuntu .
           docker push andrewb1234/blog-frontend:ubuntu
-          cd ../backend
-          docker build -t andrewb1234/blog-backend:ubuntu .
-          docker push andrewb1234/blog-backend:ubuntu
   deploy:
     runs-on: ubuntu-latest
     needs: build-images
@@ -30,7 +27,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{secrets.EC2_USER}}@${{secrets.EC2_HOST}}<<EOF
           mkdir -p ~/blog/
           cd ~/blog/
-          sudo docker compose down
-          git pull origin main
+          sudo docker compose -f compose.prod.yaml down 
+          git pull https://github.com/andrewBrownConsulting/coding-blog
           sudo docker compose -f compose.prod.yaml up -d --build
           EOF

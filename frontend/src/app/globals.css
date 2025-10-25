@@ -164,3 +164,9 @@ footer img {
 nav img {
   object-fit: contain;
 }
+input{
+  width: 100%;
+}
+textarea{
+ width:100%; 
+}
