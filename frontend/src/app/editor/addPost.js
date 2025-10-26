@@ -1,5 +1,5 @@
 'use server'
-import { addBlogEntry, getAllBlogIds, getBlogEntryWithId, updateBlogEntry } from '../db.js'
+import { addBlogEntry, deleteEntryWithId, getAllBlogIds, getBlogEntryWithId, updateBlogEntry } from '../db.js'
 import { formatArticle } from '../utils.js';
 export async function addPost(newArt, title, id, imgCaption, article) {
   const formattedArticle = formatArticle(article)
@@ -13,4 +13,7 @@ export async function getIds() {
 }
 export async function serverGetBlogEntryWithId(id) {
   return getBlogEntryWithId(id);
+}
+export async function serverDeleteEntryWithId(id) {
+  return deleteEntryWithId(id);
 }

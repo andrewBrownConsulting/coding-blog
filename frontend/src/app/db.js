@@ -46,3 +46,8 @@ export async function makeDataTable() {
     + ')';
   blog_query(tableQuery);
 }
+
+export async function deleteEntryWithId(id) {
+  const database = await blog_query('DELETE from blog_entries where id = $1', [id]);
+  console.log(database);
+}

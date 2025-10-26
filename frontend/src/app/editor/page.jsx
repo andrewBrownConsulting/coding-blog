@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { addPost, getIds, serverGetBlogEntryWithId } from './addPost';
+import { addPost, getIds, serverDeleteEntryWithId, serverGetBlogEntryWithId } from './addPost';
 
 export default function Home() {
   const [newArticle, setNewArticle] = useState(false)
@@ -34,6 +34,7 @@ export default function Home() {
   return (
     <div>
       <button onClick={(e) => { e.preventDefault; setNewArticle(!newArticle) }}>Create New Article</button>
+      <button onClick={() => serverDeleteEntryWithId(id)}>DELETE ENTRY</button>
       <form action={() => addPost(newArticle, title, id, imgCaption, article)}>
         <br />
         {!newArticle && <select onChange={(e) => handleIdChange(e.target.value)}>
