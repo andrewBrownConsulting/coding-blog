@@ -6,15 +6,26 @@ interface Props {
     params: { id: string }
 };
 function parseArticle(articleArray: string[]) {
-
-    //delete _ from article
-    articleArray = articleArray.map(line => line.replace(/_/g, ''));
     // turn lines starting with ## into h2 tags
     return articleArray.map((line, key) => {
         if (line.startsWith("##")) {
             return <Heading key={key}>{line.substring(3)}</Heading>;
         }
-        return <Text key={key}>{line}</Text>;
+        else if (line.startsWith("![")) {
+            //extract url from ![url]
+            const url = line.substring(2, line.length - 1);
+            return <Image key={key} src={url} alt="Blog Image" width={500} height={300} />;
+        }
+        //find _text_ and make it italic
+        const parts = line.split(/(_[^_]+_)/g);
+        const newline = parts.map((part, index) => {
+            if (part.startsWith("_") && part.endsWith("_")) {
+                return <em key={index}>{part.substring(1, part.length - 1)}</em>;
+            } else {
+                return part;
+            }
+        });
+        return <Text key={key}>{newline}</Text>;
     });
 }
 
