@@ -1,13 +1,14 @@
-import { neon } from "@neondatabase/serverless";
+export async function getAllData(id) {
+    return await import('./posts.json').then(module => module.default.posts);
+}
 
-export async function getData(id) {
-    const sql = neon(process.env.DATABASE_URL);
-    const data = await sql`SELECT * FROM blog_entries;`;
-    return data;
+export async function getLimitedData(id) {
+    const data = await import('./posts.json').then(module => module.default.posts);
+    //return first 6 entries
+    return data.slice(0, 6);
 }
 
 export async function getDataForId(id) {
-    const sql = neon(process.env.DATABASE_URL);
-    const data = await sql`SELECT * FROM blog_entries WHERE id=${id};`;
-    return data;
+    const data = await import('./posts.json').then(module => module.default.posts);
+    return data.filter(i => i.id == id);
 }

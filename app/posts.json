@@ -1,0 +1,55 @@
+{
+    "posts": [
+        {
+            "id": "starting-a-blog",
+            "title": "Why I'm Starting a Daily Blog",
+            "date": "January 1, 2024",
+            "image": "/images/blog.png",
+            "article": [
+                "## Intro",
+                "'The unexamined life is not worth living' - Socrates. Here, I'll try to examine just about everything I know about what I do best, Software Engineering. I'm currently a middling software engineer trying to become the best. I'm a fast learner though, so that's a good start.",
+                "'... but when you examine your life... oh that's not fun' - Norm MacDonald. Routinely calling into question your most basic assumptions can be painful. I believe that,  to get good at anything, you should need to go though all the necessary torture. In this case, I'll be learning everything there is to know about software.",
+                "## Who the Blog Is For",
+                "In all honesty, the blog is mostly for my own benefit. I don't much read blogs. I don't expect to get much or any interest in this blog. This blog exists simply as a creative outlet. ",
+                "However, if you (not me) are reading this, then you are surely interested in software. So... maybe heed some second hand knowledge. It's not the real thing but a whiff of it. Useful for getting a taste.",
+                "## The Topics I'll Be Covering",
+                "This blog aims to examine what I know, what I'm learning, deep into my thoughts. As what I'm learning is usually technology based, that's what the blog will usually be. ",
+                "I have a few thoughts as to the initial direction of the blog. I'm trying for a Front-End Developer job so my current learning is aimed at front-end development. The modern state of UI is a good option. By the same token, to understand a problem is the first step to solve it so I'll examine the job market and how to best get a job in 2025. I have some expertise in code optimisation so I'll write a piece on when we should and shouldn't optimise code. Lastly, I think improving performance is an important thing to think about. I'll write on exercise, sleep and diets a little bit. ",
+                "## My Target Blog style",
+                "From blogs I've read (not many) I really like one written by Tim Ferriss. He is a man who want's to make the most of his life and inspire others to do the same. His style is both deeply personal and professionally polished. It reads like a celebrity newspaper column where it's from a particular perspective but not 'talky' or poorly edited.",
+                "## What Success Looks Like",
+                "Success in this blog will be if I can make it to 100 days. 100 days, 100 articles, 50,000 edited. The reason for 'daily' as opposed to bi-weekly (my first thought) is that I need a lot of examination in my life. ",
+                "## Conclusion",
+                "What does Socrates mean when he says we need to examine our lives? Well... I think he means that we should maximise our lives. Not just live for the sake of living but really put effort into our days. Make the most of what we have. I think this blog is the first step towards that goal!"
+            ]
+        },
+        {
+            "id": "software-updates",
+            "title": "How to Effectively Roll Out Software Updates",
+            "date": "January 2, 2024",
+            "image": "/images/blog.png",
+            "article": [
+                "## Intro",
+                "Popular software usually receives frequent updates. In fact, modern software _needs_ to be updated to function. The web browser you are viewing this on needs to be updated. The Operating System on your Phone or Laptop needs to be updated. Standards change, requirements change, bugs emerge and products get new features to fulfil user demands.",
+                "Although modern updates are usually extremely well done, understanding how to roll out software updates is a key part of the software lifecycle.",
+                "## Fix and Feature Updates",
+                "We can split updates into two groups; fixes and features. ",
+                "Fixes - things the user shouldn't see (security updates, bug fixes etc). ",
+                "Features - things the user should see (new buttons, updated UI etc).",
+                "A fix is simple because nobody sees it. The user simply won't see the error any more.",
+                "The hard type of update is a feature update. This is because you can annoy users with changes to software they are familiar with. As such, we need to be sensitive to the user. The user trusts you to not break their product. They have a mental map of how everything works so we need to keep it the same. Any time we are changing the app, we need to be tasteful, keep the user informed and be persuasive.",
+                "## Strategies for roll out",
+                "The easiest type of roll out is to push the update to everyone at once - referred to as 'big-bang'. There are some issues with big-bang such as if there is a major bug that was missed in testing or extremely negative user feedback regarding a feature.",
+                "The safer approach is to deploy to a subset of your users. Get feedback and later have a wide release. You can see if you've missed anything with minimal reputational damage. However, this is more expensive to set up and delays updates.",
+                "Rule of thumb: big product - phased, small product - all at once.",
+                "## The worst update of all time",
+                "What would happen if Y2K did happen? What if a huge amount of computers crashed all at once? Well... that did happen. Last year. The 'Crowdstrike Outage'  (19th of July, 2024) was arguably the worst software update of all time and completely avoidable. ",
+                "In short, the outage was caused by a security update to Crowdstrike's Falcon product with a logical error. As Falcon has special privilege to low level OS commands, Falcon caused Windows to crash... on over 8.5 million machines.",
+                "The fix was issued within hours but by then, the damage was done.",
+                "How would you avoid this? Well... don't use a Big-Bang rollout when you have your software running on 8.5 million devices. This was a leadership problem, they did not plan for mistakes to happen.",
+                "## Conclusion",
+                "Updating Software is _usually_ fairly simple these days. Most software can be frequently updated and feedback is readily available. Big companies value reputation over velocity and have entire teams dedicated to effectively rolling out updates their software. "
+            ]
+        }
+    ]
+}
