@@ -1,4 +1,4 @@
-import { getDataForId } from "../../utils.js";
+import { formatDate, getDataForId } from "../../utils.js";
 import { Heading, Text, Box, Image, Button } from "@chakra-ui/react";
 import Link from "next/link.js";
 interface Props {
@@ -39,7 +39,7 @@ export default async function BlogCard({ params }: Props) {
     return (
         <Box style={{ maxWidth: "75ch", justifyContent: "center", margin: "auto", padding: "20px" }}>
             <Heading size="3xl" style={{ textAlign: "center" }}>{title}</Heading>
-            <Heading style={{ textAlign: 'center', fontStyle: 'italic' }}>{date.toLocaleString()}</Heading>
+            <Heading style={{ textAlign: 'center', fontStyle: 'italic' }}>{formatDate(date)}</Heading>
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <Image src={image} alt={title} width={500} height={300} borderRadius="md" my={2} />
             </div>
