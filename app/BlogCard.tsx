@@ -1,14 +1,11 @@
 import { Card, CardHeader, Image, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { formatDate } from './utils';
 // import the vercel blob storage util
 
 export default async function BlogCard({ title, date, id, image }: { title: string; date: string; id: string, image: string }) {
   //get date in 1 Jan 2020 format
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
+  const formattedDate = formatDate(date);
   return (
     <Link href={`/blog-page/${id}`}  >
       <Card.Root maxW="sm" overflow="hidden" _hover={{ bg: 'gray.700' }} transition="background 0.2s" borderColor="white" margin="auto">

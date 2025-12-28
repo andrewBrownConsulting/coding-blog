@@ -44,7 +44,7 @@ export default async function BlogCard({ params }: Props) {
                 <Image src={image} alt={title} width={500} height={300} borderRadius="md" my={2} />
             </div>
             {parseArticle(article).map((paragraph) => paragraph)}
-            <Box display="flex" justifyContent="center" margin='auto'>
+            <Box display="flex" justifyContent="center" margin='auto' py={4}>
                 <Link href="/" >
                     <Button>
                         <Heading size="lg">Back to Home</Heading>

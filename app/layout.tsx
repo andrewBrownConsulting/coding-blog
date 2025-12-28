@@ -29,10 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider>
-          <Box maxWidth="1200px" margin="auto" padding={4}>
-            <Link href="/">
-              <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.400' }} mb={2}>Andrew Brown Blog</Heading>
-            </Link>
+          <Box maxWidth="1200px" margin="auto" padding={4} >
+            <Box textAlign={'center'}>
+              <Link href="/" style={{ display: 'inline-block' }}>
+                <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.500' }} mb={2} background={'white'} p={4} borderRadius={'md'} color={'black'}>Andrew Brown Blog</Heading>
+              </Link>
+            </Box>
             {children}
           </Box>
         </Provider>
