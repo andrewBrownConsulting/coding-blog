@@ -10,10 +10,10 @@ export default async function BlogCard({ title, date, id, image }: { title: stri
     day: 'numeric',
   });
   return (
-    <Link href={`/blog-page/${id}`}>
-      <Card.Root maxW="sm" overflow="hidden" p={4}>
+    <Link href={`/blog-page/${id}`}  >
+      <Card.Root maxW="sm" overflow="hidden" _hover={{ bg: 'gray.700' }} transition="background 0.2s" borderColor="white" margin="auto">
         <Image src={image} alt='Blog Image' width='100%' height='auto' borderTopRadius='md' aspectRatio={1.5} />
-        <CardHeader bg='gray.800' borderBottomRadius='md'>
+        <CardHeader borderBottomRadius='md'>
           <Heading size='lg' lineHeight="1.2em"
             minH="2.4em" maxH="2.4em" overflow={"hidden"} textOverflow={'ellipsis'}>{title}</Heading>
           <Text fontSize='sm' color='gray.400' pb={4}>{formattedDate}</Text>

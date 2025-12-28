@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider"
 import Link from "next/link";
-import { Heading } from "@chakra-ui/react";
+import { Flex, Heading, Box } from "@chakra-ui/react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,12 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider>
-          <Link href="/">
-            <Heading>Andrew Brown Blog</Heading>
-          </Link>
-          {children}
+          <Box maxWidth="1200px" margin="auto" padding={4}>
+            <Link href="/">
+              <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.400' }} mb={2}>Andrew Brown Blog</Heading>
+            </Link>
+            {children}
+          </Box>
         </Provider>
       </body>
-    </html>
+    </html >
   );
 }

@@ -1,6 +1,5 @@
 import { getDataForId } from "../../utils.js";
-import { Heading, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Heading, Text, Box, Image, Button } from "@chakra-ui/react";
 import Link from "next/link.js";
 interface Props {
     params: { id: string }
@@ -9,12 +8,15 @@ function parseArticle(articleArray: string[]) {
     // turn lines starting with ## into h2 tags
     return articleArray.map((line, key) => {
         if (line.startsWith("##")) {
-            return <Heading key={key}>{line.substring(3)}</Heading>;
+            return <Heading my={2} key={key}>{line.substring(3)}</Heading>;
         }
         else if (line.startsWith("![")) {
-            //extract url from ![url]
             const url = line.substring(2, line.length - 1);
-            return <Image key={key} src={url} alt="Blog Image" width={500} height={300} />;
+            return (
+                <div key={key} style={{ display: "flex", justifyContent: "center" }}>
+                    <Image src={url} alt="Blog Image" width={500} height={300} my={2} borderRadius={'md'} />
+                </div>
+            );
         }
         //find _text_ and make it italic
         const parts = line.split(/(_[^_]+_)/g);
@@ -35,12 +37,20 @@ export default async function BlogCard({ params }: Props) {
     const data = await getDataForId(slug);
     const { title, article, date, image } = data[0];
     return (
-        <div style={{ maxWidth: "100ch", justifyContent: "center" }}>
-            <Heading size="lg">{title}</Heading>
-            <Image src={image} alt={title} width={500} height={300} />
-            <p>{date.toLocaleString()}</p>
+        <Box style={{ maxWidth: "75ch", justifyContent: "center", margin: "auto", padding: "20px" }}>
+            <Heading size="3xl" style={{ textAlign: "center" }}>{title}</Heading>
+            <Heading style={{ textAlign: 'center', fontStyle: 'italic' }}>{date.toLocaleString()}</Heading>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+                <Image src={image} alt={title} width={500} height={300} borderRadius="md" my={2} />
+            </div>
             {parseArticle(article).map((paragraph) => paragraph)}
-            <Link href="/">Back to Home</Link>
-        </div>
+            <Box display="flex" justifyContent="center" margin='auto'>
+                <Link href="/" >
+                    <Button>
+                        <Heading size="lg">Back to Home</Heading>
+                    </Button>
+                </Link>
+            </Box>
+        </Box>
     );
 }
