@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider"
-import Link from "next/link";
-import { Flex, Heading, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Header from "./Header";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,11 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Provider>
-          <Box maxWidth="1200px" margin="auto" padding={4} >
+          <Box maxWidth="1200px" margin="auto" padding={4} gap={6} >
+            <Header />
             <Box textAlign={'center'}>
-            <Link href="/" style={{ display: 'inline-block' }}>
-              <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.500' }} mb={2} background={'white'} p={4} borderRadius={'md'} color={'black'}>Andrew Brown Blog</Heading>
-            </Link>
             </Box>
             {children}
           </Box>

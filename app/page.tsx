@@ -4,7 +4,7 @@ import { getAllData, getLimitedData } from './utils.js';
 export default async function Home() {
   const posts = await getAllData();
   return (
-    <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap={6} width="100%" padding={2}>
+    <Grid templateColumns={{ base: '1fr', sm: '1fr 1fr', lg: '1fr 1fr 1fr' }} alignItems="center" gap={6}>
       {posts.map((post) => (
         <BlogCard key={post.id} title={post.title} date={post.date} id={post.id} image={post.image} />
       ))}
