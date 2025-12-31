@@ -31,8 +31,7 @@ function parseArticle(articleArray: string[]) {
   });
 }
 export default async function BlogCard({ params }: Props) {
-  const { id: slug } = await params;
-
+  const { id: slug } = params;
   const data = await getDataForId(slug);
   const { title, article, date, image } = data[0];
   return (
