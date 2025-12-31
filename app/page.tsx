@@ -1,6 +1,6 @@
 import BlogCard from './BlogCard';
 import { Grid } from '@chakra-ui/react';
-import { getAllData, getLimitedData } from './utils.js';
+import { getAllData } from './utils.js';
 export default async function Home() {
   const posts = await getAllData();
   return (
