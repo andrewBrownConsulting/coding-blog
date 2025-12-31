@@ -31,9 +31,9 @@ export default function RootLayout({
         <Provider>
           <Box maxWidth="1200px" margin="auto" padding={4} >
             <Box textAlign={'center'}>
-              <Link href="/" style={{ display: 'inline-block' }}>
-                <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.500' }} mb={2} background={'white'} p={4} borderRadius={'md'} color={'black'}>Andrew Brown Blog</Heading>
-              </Link>
+            <Link href="/" style={{ display: 'inline-block' }}>
+              <Heading textAlign={'center'} fontSize={'4xl'} _hover={{ color: 'gray.500' }} mb={2} background={'white'} p={4} borderRadius={'md'} color={'black'}>Andrew Brown Blog</Heading>
+            </Link>
             </Box>
             {children}
           </Box>

@@ -1,9 +1,7 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
 import BlogCard from './BlogCard';
 import { Grid } from '@chakra-ui/react';
 import { getAllData, getLimitedData } from './utils.js';
 export default async function Home() {
-
   const posts = await getAllData();
   return (
     <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap={6} width="100%" padding={2}>
