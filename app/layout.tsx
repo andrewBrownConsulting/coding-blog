@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Provider } from "@/components/ui/provider"
+
 import { Box } from "@chakra-ui/react";
 import Header from "./Header";
+import { Provider } from "@/components/ui/provider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +30,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider>
+        <Provider >
           <Box maxWidth="1200px" margin="auto" padding={4} gap={6} >
             <Header />
             <Box textAlign={'center'}>
