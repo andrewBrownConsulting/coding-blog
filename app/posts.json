@@ -389,6 +389,37 @@
                 "## Final thoughts ",
                 "This is a little different from my last new year's resolutions as I've thought logically about why and how I will achieve it. I've also tried to distill the routine down to a single task, wake up. If I have woken up at 6am 365 days in a row come December 31st next year, I will declare victory over sleep. As achievements go, this would be a great one."
             ]
+        },
+        {
+            "id": "circle-packing-1",
+            "title": "Intro to Circle Packing Series",
+            "date": "01/18/2026",
+            "image": "https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/rocketEngineCircles.jpg",
+            "article": [
+                "I've been interested in circle-in-circle packing for a couple of years now. The simplicity of the problem is interesting to me. Take a bunch of circles, how best can we arrange these into a circle. It's not, however, a solved problem. It's hard enough that we use approximate solutions.",
+                "If you have eyes to see it you'll see this come up over and over, from shower drains to space ships. Here are some examples I like.",
+                "## Examples",
+                "Speaker Grill",
+                "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/speakerGrill.jpg]",
+                "Cocktail Drainer",
+                "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/cocktailDrainer.jpg]",
+                "LED Circular Light",
+                "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/ledLight.jpg]",
+                "## The importance of good packing",
+                "The engineering reason for most packing is that we need a consistent or a high density of 1 thing inside another. The holes in a drain need to be consistent so the drain works from all sides. The light needs to have as close to uniform brightness as possible. The rocket needs lots of engines in a small area.",
+                "## A simple algorithm",
+                "Although this is a hard problem to find the optimal solution for, it doesn't mean that there isn't a simple algorithm that works well.",
+                "Actually, I think most engineers, knowingly or not, are using the same algorithm here - concentric rings.",
+                "This means placing all circles in concentric rings around a central circle.",
+                "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/concentricRings.png]",
+                "This works pretty well, we end up with a high density, a symmetrical shape and predictable results.",
+                "Here's the result for 21 circles, pretty good.",
+                "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/circlePacking/circlePacking.png]",
+                "There is a lot of space around the outer ring but for something like a drain, there'd be nowhere for water to pool/not drain.",
+                "I do feel that we can do better than the simple algorithm with more thought.",
+                "## Next steps",
+                "This was just an introductory blog post to introduce the topic. The next post will be about improving our algorithm + finding non-concentric ring solutions."
+            ]
         }
     ]
 }

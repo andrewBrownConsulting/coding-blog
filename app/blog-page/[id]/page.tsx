@@ -14,7 +14,7 @@ function parseArticle(articleArray: string[]) {
       const url = line.substring(2, line.length - 1);
       return (
         <div key={key} style={{ display: "flex", justifyContent: "center" }}>
-          <Image src={url} alt="Blog Image" width={500} height={300} my={2} borderRadius={'md'} />
+          <Image src={url} alt="Blog Image" width={500} height={400} my={2} borderRadius={'md'} />
         </div>
       );
     }
@@ -31,7 +31,8 @@ function parseArticle(articleArray: string[]) {
   });
 }
 export default async function BlogCard({ params }: Props) {
-  const { id: slug } = params;
+  const { id: slug } = await params;
+  console.log(params);
   const data = await getDataForId(slug);
   const { title, article, date, image } = data[0];
   return (
