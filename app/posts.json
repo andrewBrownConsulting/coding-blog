@@ -420,6 +420,50 @@
                 "## Next steps",
                 "This was just an introductory blog post to introduce the topic. The next post will be about improving our algorithm + finding non-concentric ring solutions."
             ]
+        },
+        {
+            "id": "moring-automation",
+            "title": "Becoming Tony Stark (in the morning)",
+            "date": "02/01/2026",
+            "image": "https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/morning-routine/ironManAlarm.jpg",
+            "article": [
+              "I have started want to embrace automation in my life. With the advances in AI, smart home devices and my ever increasing levels of busyness, I think that automating the boring things in life could be a fantastic use of time. The one thing to consider is not spending more time automating than I save.",
+              "This idea was largely inspired by the iron man clip of his 7AM alarm.",
+              "## The Dream ",
+              "The perfect solution is to have an AI assistant check I've woken up, tell me all the information I will need to know for my day, pull the blinds and make me a steaming hot cup of Joe. Maybe one day but let's snap back to reality... what's Version 1.0?",
+              "## Version 1.0 Design Decisions",
+              "For example, when I wake up I want to know;",
+              "- My schedule for the day",
+              "- The weather for the day",
+              "- Quick summary of the news/current events",
+              "Mercifully, this is actually quite simple in 2026. In fact, there's a multitude of ways to achieve this. Self hosted cron job on a Raspberry Pi, using AWS lambda function, a webpage which auto opens on my phone in the morning.",
+              "Here is where we need to make a major design decision - what architecture am I going to go with? Let's weigh up the cost, time and difficulty of each of these options. ",
+              "Raspberry Pi - very customisable, free forever but also a long setup time. ",
+              "AWS Lambda Function - very simple, serverless, large amounts of custom code.",
+              "Webpage which opens on my phone - Apple shortcuts doesn't have this option",
+              "n8n cloud - very simple, serverless, no-code integration tools, very fast setup.",
+              "So, I've elected to go with n8n, mainly for the simple and fast setup time. This is an expensive solution in the longer term but I haven't even verified the idea is a good one! After I check its actually even worth pursuing I can start making a more powerful (and cheaper to run) version of this.",
+              "This is my new design philosophy and is definitely the way to go in 2026, build fast, learn what works, then iterate on a working version. As they say over in Silicon Valley, 'Fail fast'. ",
+              "## The news",
+              "In n8n, we don't so much code as connect different functions. It's an automation configuration tool. It is actually so much quicker than coding.",
+              "The first (and easiest) part of this will be getting a news summary. The design is as follows; wait until 6am, get news info, plug into an LLM to make a summary, email to myself.",
+              "So, I've used the BBC RSS feed, javascipt to format the text, the ChatGPT API and Gmail. The only code required here is to convert XML from RSS to a usable context.",
+              "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/morning-routine/newsIntegration.jpg]",
+              "This took all of 20 minutes to set up and I can't see how it would break.",
+              "## The weather",
+              "The weather data is also quite easy to get. I couldn't get an integration to work so I just used a GET request to a weather API. Inside of the request is all the information for my location.",
+              "Then, just add a little code to format the data and update the email function. Done.",
+              "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/morning-routine/weatherIntegration.jpg]",
+              "## Daily Schedule",
+              "I'm sticking with the n8n integrations for now and they don't have an apple calendar integration. They do have a google calendar one so I'll just copy over my diary. ",
+              "Once again, after signing in on google, grabbing today's calendar is shockingly simple. A little more code and we're done!",
+              "![https://w6a1hhcupko92e7d.public.blob.vercel-storage.com/images/morning-routine/calendarIntegration.jpg]",
+              "## No Code tools FTW?",
+              "As a programmer, I sometimes forget to not overcomplicate things. This did require a little bit of javascript to zip tie it all together so maybe a low-code tool??? That said, the code is extremely simple reformatting.",
+              "This n8n tool did an enormous amount of heavy lifting here. From executing api calls to storing the logic, sending emails from a server (there' 2 hours saved already) and the rest of the nonsense that most of these programming project take. This was definitely the right choice.",
+              "## Summary",
+              "As for whether I end up using this automation, I'll have to see. I think it's probably quite useful but email was never the final plan. I'd prefer my original idea of an AI personal assistant but for now this will do. The ability to extend this functionality is really exciting. Going forward I am wanting to improve my whole day with automations. "
+          ]
         }
     ]
 }
