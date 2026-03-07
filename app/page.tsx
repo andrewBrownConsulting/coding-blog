@@ -1,6 +1,7 @@
 import BlogCard from './BlogCard';
-import { Grid } from '@chakra-ui/react';
-import { getAllData } from './utils.js';
+import { Grid, Button } from '@chakra-ui/react';
+
+import { getAllData, addBlogEntry } from './utils.js';
 export default async function Home() {
   const posts = await getAllData();
   return (
