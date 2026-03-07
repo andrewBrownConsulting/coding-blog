@@ -4,6 +4,14 @@ import Link from "next/link.js";
 interface Props {
   params: { id: string }
 };
+function wordsInArticle(articleArray: string[]) {
+  let count = 0;
+  articleArray.forEach(paragraph => {
+    count += paragraph.split(' ').length;
+
+  });
+  return count;
+}
 function parseArticle(articleArray: string[]) {
   // turn lines starting with ## into h2 tags
   return articleArray.map((line, key) => {
@@ -32,7 +40,6 @@ function parseArticle(articleArray: string[]) {
 }
 export default async function BlogCard({ params }: Props) {
   const { id: slug } = await params;
-  console.log(params);
   const data = await getDataForId(slug);
   const { title, article, date, image } = data[0];
   return (
@@ -42,6 +49,8 @@ export default async function BlogCard({ params }: Props) {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Image src={image} alt={title} width={500} height={300} borderRadius="md" my={2} />
       </div>
+      <Text style={{ fontStyle: 'italic' }} pb={4}>Word Count {wordsInArticle(article)}, Est Reading Time: {(wordsInArticle(article) / 300).toFixed(0)} mins
+      </Text>
       {parseArticle(article).map((paragraph) => paragraph)}
       <Box display="flex" justifyContent="center" margin='auto' py={4}>
         <Link href="/" >
@@ -50,6 +59,6 @@ export default async function BlogCard({ params }: Props) {
           </Button>
         </Link>
       </Box>
-    </Box>
+    </Box >
   );
 }
