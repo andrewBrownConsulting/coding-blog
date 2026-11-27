@@ -22,6 +22,18 @@ export async function addBlogEntry(id, title, date, image, article) {
   `;
   return;
 }
+export async function updateBlogEntry(originalId, id, title, date, image, article) {
+  const sql = neon(process.env.DATABASE_URL);
+  await sql`
+    UPDATE blog_entries
+    SET id = ${id}, title = ${title}, date = ${date}, image = ${image}, article = ${article}
+    WHERE id = ${originalId}
+  `;
+}
+export async function deleteBlogEntry(id) {
+  const sql = neon(process.env.DATABASE_URL);
+  await sql`DELETE FROM blog_entries WHERE id = ${id}`;
+}
 
 export async function getJsonData() {
   const data = await import('./posts.json').then(module => module.default.posts);
