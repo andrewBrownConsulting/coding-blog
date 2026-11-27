@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Box, Button, Field, Flex, Heading, Input, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Box, Button, Field, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import { savePost } from "./actions";
+import { ArticleField, CoverImageField } from "./ImageFields";
 
 export interface Post {
   id: string;
@@ -41,22 +42,8 @@ export default function PostForm({ post, error }: { post?: Post; error?: string 
               <Input type="date" name="date" defaultValue={toDateInput(post?.date)} />
             </Field.Root>
           </Flex>
-          <Field.Root>
-            <Field.Label>Cover image URL</Field.Label>
-            <Input name="image" defaultValue={post?.image} placeholder="https://..." />
-          </Field.Root>
-          <Field.Root required>
-            <Field.Label>Article</Field.Label>
-            <Textarea
-              name="article"
-              defaultValue={post?.article.join("\n\n")}
-              rows={24}
-              fontFamily="mono"
-            />
-            <Field.HelperText>
-              One paragraph per line. &quot;## Heading&quot; for headings, &quot;![url]&quot; for images, _text_ for italics.
-            </Field.HelperText>
-          </Field.Root>
+          <CoverImageField defaultValue={post?.image} />
+          <ArticleField defaultValue={post?.article.join("\n\n")} />
           <Button type="submit" alignSelf="start">Save</Button>
         </Stack>
       </form>
