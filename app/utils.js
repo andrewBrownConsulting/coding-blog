@@ -1,5 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 export async function getAllData() {
+  console.log("get all data")
   const sql = neon(process.env.DATABASE_URL);
   const data = await sql`SELECT * FROM blog_entries;`;
   const sortedData = data.sort((a, b) => {
@@ -13,8 +14,8 @@ export async function getDataForId(id) {
   return data;
 }
 export async function addBlogEntry(id, title, date, image, article) {
+  console.log(id)
   const sql = neon(process.env.DATABASE_URL);
-
   const data = await sql`
     INSERT INTO blog_entries (id, title, date, image, article)
     VALUES (${id}, ${title}, ${date}, ${image}, ${article})

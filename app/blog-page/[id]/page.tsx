@@ -41,6 +41,9 @@ function parseArticle(articleArray: string[]) {
 export default async function BlogCard({ params }: Props) {
   const { id: slug } = await params;
   const data = await getDataForId(slug);
+  console.log(data)
+  if (data.length == 0)
+    return <div>Not found</div>
   const { title, article, date, image } = data[0];
   return (
     <Box style={{ maxWidth: "75ch", justifyContent: "center", margin: "auto", padding: "20px" }}>
